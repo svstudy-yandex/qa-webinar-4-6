@@ -47,7 +47,7 @@ public class Main {
         tasks.sort(new Comparator<Task>() {
             @Override
             public int compare(Task o1, Task o2) {
-                return o1.getId() - o2.getId();
+                return Integer.compare(o1.getId(), o2.getId());
             }
         });
 
@@ -57,7 +57,7 @@ public class Main {
     private static void sortWithLambda() {
         List<Task> tasks = generateTasks();
 
-        tasks.sort((o1, o2) -> Integer.compare(o1.getId(), o2.getId()));
+        tasks.sort((t1, t2) -> Integer.compare(t1.getId(), t2.getId()));
 
         System.out.println(tasks);
     }
